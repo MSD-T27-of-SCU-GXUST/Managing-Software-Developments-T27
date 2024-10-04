@@ -16,7 +16,7 @@ num = 0
 app = QApplication([])
 
 window = QMainWindow()
-window.setWindowTitle('NovelAI Command')
+window.setWindowTitle('NovelAI cmd')
 
 central = QWidget()
 window.setCentralWidget(central)
@@ -24,7 +24,7 @@ window.setCentralWidget(central)
 layout = QVBoxLayout()
 central.setLayout(layout)
 
-def start_browser():
+def kaishi():
     cmd = r'C:\Program Files\Google\Chrome\Application\chrome.exe --remote-debugging-port=9876'
     subprocess.run(cmd)
     time.sleep(5)
@@ -46,11 +46,11 @@ def mainpart():
     elements = driver.find_elements(By.XPATH, "//div[@class='sc-2750d5a6-0 cMHbKm']")
 
     # enter the tag to be used
-    input_label = QLabel('Tags to use:')
+    input_label = QLabel('使用的tag:')
     layout.addWidget(input_label)
     tag_input = QLineEdit()
     layout.addWidget(tag_input)
-    tag_button = QPushButton('Submit')
+    tag_button = QPushButton('输入')
 
     def read_text():
         text = tag_input.text()
@@ -58,7 +58,7 @@ def mainpart():
         tags.append(text)
         tags_str = ", ".join(tags)
         for element in elements:
-            textarea = element.find_element(By.XPATH, ".//textarea[@placeholder='Write your prompt here. Use tags to shape your output.' and contains(@class, 'sc-a2d0901c-45 kyIdtk')]")
+            textarea = element.find_element(By.XPATH, ".//textarea[@placeholder='在此处写下您的提示。使用标签来塑造您的输出。' and contains(@class, 'sc-a2d0901c-45 kyIdtk')]")
             textarea.clear()
             textarea.send_keys(tags_str)
     
@@ -66,57 +66,57 @@ def mainpart():
     layout.addWidget(tag_button)
 
     # enter a disabled tag
-    disable_label = QLabel('Tags to disable:')
+    disable_label = QLabel('禁用的tag:')
     layout.addWidget(disable_label)
     dtag_input = QLineEdit()
     layout.addWidget(dtag_input)
-    dtag_button = QPushButton('Submit')
+    dtag_button = QPushButton('输入')
 
-    def read_disabled_text():
+    def dread_text():
         text = dtag_input.text()
         disable_tags.clear()
         disable_tags.append(text)
         dtags_str = ", ".join(disable_tags)
         for element in elements:
-            textarea = element.find_element(By.XPATH, ".//textarea[@placeholder='Write down what you want excluded from the generation.' and contains(@class, 'sc-a2d0901c-45 kyIdtk')]")
+            textarea = element.find_element(By.XPATH, ".//textarea[@placeholder='写下您希望从这一代中剔除的内容。' and contains(@class, 'sc-a2d0901c-45 kyIdtk')]")
             textarea.clear()
             textarea.send_keys(dtags_str)
     
-    dtag_button.clicked.connect(read_disabled_text)
+    dtag_button.clicked.connect(dread_text)
     layout.addWidget(dtag_button)
 
     # enter the number of loops
-    times_label = QLabel('Number of loops:')
+    times_label = QLabel('循环次数:')
     layout.addWidget(times_label)
     times_input = QLineEdit()
     layout.addWidget(times_input)
-    times_button = QPushButton('Submit')
+    times_button = QPushButton('输入')
 
-    def set_loop_times():
+    def random_times():
         text = times_input.text()
         times_number.clear()
         times_number.append(text)
         global num
         num = int(times_number[0])
 
-    times_button.clicked.connect(set_loop_times)
+    times_button.clicked.connect(random_times)
     layout.addWidget(times_button)
 
     # click the Start button
-    start_button = QPushButton('Start')
+    hajimeru = QPushButton('开始')
 
-    def start_generation():
+    def start():
         for element in elements:
             search = element.find_element(By.XPATH, ".//button[contains(@class, 'sc-d72450af-1') and @disabled]")
             for x in range(0, num):
                 search.click()
 
-    start_button.clicked.connect(start_generation)
-    layout.addWidget(start_button)
+    hajimeru.clicked.connect(start)
+    layout.addWidget(hajimeru)
 
 if __name__ == '__main__':
     # Use multiprocessing instead of threading
-    process1 = multiprocessing.Process(target=start_browser)
+    process1 = multiprocessing.Process(target=kaishi)
     process2 = multiprocessing.Process(target=mainpart)
 
     process1.start()
@@ -128,4 +128,3 @@ if __name__ == '__main__':
     window.show()
 
     app.exec_()
-
