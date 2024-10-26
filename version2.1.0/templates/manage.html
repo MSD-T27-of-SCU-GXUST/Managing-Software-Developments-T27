@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宿舍管理</title>
+</head>
+<body>
+    <h1>管理宿舍信息</h1>
+    <form method="POST">
+        <input type="text" name="name" placeholder="宿舍名称" required>
+        <input type="number" name="capacity" placeholder="宿舍容量" required>
+        <button type="submit">添加宿舍</button>
+    </form>
+    <h2>现有宿舍</h2>
+    <ul>
+        {% for dormitory in dormitories %}
+            <li>{{ dormitory.name }} - 容量: {{ dormitory.capacity }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
