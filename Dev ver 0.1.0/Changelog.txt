@@ -1,0 +1,32 @@
+#Changelog
+
+##[1.0.0] - Oct-6th-2024
+
+###Added
+- .gitignore: specifies files and folders to be ignored by Git.
+- .git/: Initialize the Git repository folder.
+
+###Improved
+- app.py: Add Git related project management files.
+- requirements.txt: Update project dependency files to support version management.
+
+##[0.2.0] - Oct-5th-2024
+
+###Added
+- __init__.py: Initialize the database module.
+- models.py: Create database models for dormitories and users.
+
+###Improved
+- app.py: Integrate database initialization and set up SQLite database connection.
+- migrations/: Create database migration files to support database structure updates.
+
+##[0.1.0] - Oct-2nd-2024
+
+###Added
+- __init__.py: Initialize the user authentication module.
+- routes.py: Define routes for user registration and login.
+- forms.py: Create forms for user login and registration.
+
+###Improved
+- app.py: Integrate user authentication functions and add user registration and login processing logic.
+- models.py: Add user model, including username and password fields.
