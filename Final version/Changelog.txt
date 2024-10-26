@@ -1,0 +1,107 @@
+#Changelog
+
+##[Final version] - Oct-28th-2024
+
+###Added
+- merge_request.md: Merge request description, outlining code changes and review points.
+- deploy.sh: Automated deployment script, setting up the environment and starting the application.
+- requirements.txt: Lists the libraries and versions that the project depends on.
+
+##[2.4.0] - Oct-24th-2024
+
+###Added
+- User Manual and FAQ.docx: A document containing system function descriptions and answers to frequently asked questions.
+
+##[2.3.0] - Oct-23rd-2024
+
+###Added
+- __init__.py: Initialize the final test module.
+- routes.py: Define the routes for the final test, support the execution of integration tests and return results.
+- templates/test_results.html: The front-end template for test results, showing the test execution results.
+- tests/test_integration.py: Implement integration test cases, including user registration and login tests.
+
+##[2.2.0] - Oct-19th-2024
+
+###Added
+- __init__.py: Initialize the user feedback enhancement module.
+- routes.py: Define the routes for user feedback enhancement, including the processing logic for submitting and viewing feedback.
+- templates/enhanced_feedback.html: The improved user feedback front-end template, which supports submitting feedback and displaying existing feedback.
+
+###Improved
+- app.py: Integrate user feedback enhancement functions and add feedback submission and display processing logic.
+
+##[2.1.0] - Oct-16th-2024
+
+###Added
+- __init__.py: Initialize the dormitory allocation optimization module.
+- routes.py: Define the routes for dormitory allocation optimization, including the processing logic for optimized allocation.
+- optimization_algorithm.py: Define the implementation of the dormitory allocation optimization algorithm.
+- templates/optimize.html: The front-end template for dormitory allocation optimization, which supports triggering allocation optimization.
+
+###Improved
+- app.py: Integrate dormitory allocation optimization function and add optimization processing logic.
+
+##[2.0.0] - Oct-12nd-2024
+
+###Added
+- __init__.py: Initialize the user feedback module.
+- routes.py: Define the routes for user feedback, including the functions of submitting and viewing feedback.
+- models.py: Define the database model for feedback, including fields for user name and feedback content.
+- templates/feedback.html: Front-end template for user feedback, supporting submission of feedback and displaying a list of existing feedback.
+
+###Improved
+- app.py: Integrate user feedback function and add feedback submission and display processing logic.
+
+##[1.2.0] - Oct-11st-2024
+
+###Added
+- __init__.py: Initialize the dormitory management module.
+- routes.py: Define the routes for dormitory management, including the functions of adding and viewing dormitories.
+- models.py: Define the database model for dormitories, including dormitory name and capacity fields.
+- templates/manage.html: The front-end template for dormitory management, which supports adding dormitories and displaying the existing dormitory list.
+
+###Improved
+- app.py: Integrate dormitory management functions and add processing logic for dormitory information management.
+
+##[1.1.0] - Oct-9th-2024
+
+###Added
+- __init__.py: Initializes the dormitory allocation module.
+- allocation.py: Implements the dormitory automatic allocation algorithm and logic.
+- dormitory_management.py: Contains dormitory information management functions.
+
+###Improved
+- app.py: Integrate dormitory allocation functions, including calling dormitory allocation algorithms and dormitory information management.
+- models.py: Update dormitory models and add fields to support allocation logic.
+- forms.py: Update dormitory information management forms.
+
+##[1.0.0] - Oct-6th-2024
+
+###Added
+- .gitignore: specifies files and folders to be ignored by Git.
+- .git/: Initialize the Git repository folder.
+
+###Improved
+- app.py: Add Git related project management files.
+- requirements.txt: Update project dependency files to support version management.
+
+##[0.2.0] - Oct-5th-2024
+
+###Added
+- __init__.py: Initialize the database module.
+- models.py: Create database models for dormitories and users.
+
+###Improved
+- app.py: Integrate database initialization and set up SQLite database connection.
+- migrations/: Create database migration files to support database structure updates.
+
+##[0.1.0] - Oct-2nd-2024
+
+###Added
+- __init__.py: Initialize the user authentication module.
+- routes.py: Define routes for user registration and login.
+- forms.py: Create forms for user login and registration.
+
+###Improved
+- app.py: Integrate user authentication functions and add user registration and login processing logic.
+- models.py: Add user model, including username and password fields.
